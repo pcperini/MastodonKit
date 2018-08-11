@@ -18,4 +18,9 @@ public class Report: Codable {
         case id
         case actionTaken = "action_taken"
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

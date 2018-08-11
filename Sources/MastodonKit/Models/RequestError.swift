@@ -15,4 +15,9 @@ class MastodonError: Codable {
     private enum CodingKeys: String, CodingKey {
         case description = "error"
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

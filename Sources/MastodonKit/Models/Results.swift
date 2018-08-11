@@ -15,4 +15,9 @@ public class Results: Codable {
     public let statuses: [Status]
     /// An array of matched hashtags, as strings.
     public let hashtags: [String]
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

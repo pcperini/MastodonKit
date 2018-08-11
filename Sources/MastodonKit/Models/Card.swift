@@ -17,4 +17,9 @@ public class Card: Codable {
     public let description: String
     /// The image associated with the card, if any.
     public let image: URL?
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

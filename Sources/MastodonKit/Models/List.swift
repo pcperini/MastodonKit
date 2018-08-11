@@ -13,4 +13,9 @@ public class List: Codable {
     public let id: String
     /// The Title of the list.
     public let title: String
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

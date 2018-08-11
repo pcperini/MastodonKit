@@ -13,4 +13,9 @@ public class Context: Codable {
     public let ancestors: [Status]
     /// The descendants of the status in the conversation, as a list of statuses.
     public let descendants: [Status]
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

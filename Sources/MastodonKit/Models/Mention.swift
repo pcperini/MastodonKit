@@ -17,4 +17,9 @@ public class Mention: Codable {
     public let acct: String
     /// URL of user's profile (can be remote).
     public let url: String
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

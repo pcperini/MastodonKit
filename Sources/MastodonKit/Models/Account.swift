@@ -57,4 +57,9 @@ public class Account: Codable {
         case followingCount = "following_count"
         case statusesCount = "statuses_count"
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

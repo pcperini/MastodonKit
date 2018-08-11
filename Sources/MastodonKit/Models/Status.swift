@@ -81,4 +81,9 @@ public class Status: Codable {
         case reblog
         case pinned
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

@@ -30,4 +30,9 @@ public class LoginSettings: Codable {
         case scope
         case createdAt = "created_at"
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

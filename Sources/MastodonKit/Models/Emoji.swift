@@ -21,4 +21,9 @@ public class Emoji: Codable {
         case staticURL = "static_url"
         case url
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

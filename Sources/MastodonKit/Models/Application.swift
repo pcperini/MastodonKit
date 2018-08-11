@@ -13,4 +13,9 @@ public class Application: Codable {
     public let name: String
     /// Homepage URL of the app.
     public let website: String?
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

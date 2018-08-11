@@ -19,4 +19,9 @@ public class Instance: Codable {
     public let email: String
     /// The Mastodon version used by instance (as of version 1.3).
     public let version: String?
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

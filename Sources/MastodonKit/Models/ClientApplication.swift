@@ -24,4 +24,9 @@ public class ClientApplication: Codable {
         case clientID = "client_id"
         case clientSecret = "client_secret"
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

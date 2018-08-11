@@ -33,4 +33,9 @@ public class Attachment: Codable {
         case textURL = "text_url"
         case description
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

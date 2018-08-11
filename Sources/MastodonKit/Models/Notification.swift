@@ -27,4 +27,9 @@ public class Notification: Codable {
         case account
         case status
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

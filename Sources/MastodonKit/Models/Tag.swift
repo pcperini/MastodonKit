@@ -13,4 +13,9 @@ public class Tag: Codable {
     public let name: String
     /// The URL of the hashtag.
     public let url: String
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }

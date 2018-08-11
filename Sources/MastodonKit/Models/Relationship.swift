@@ -36,4 +36,9 @@ public class Relationship: Codable {
         case requested
         case domainBlocking = "domain_blocking"
     }
+    
+    @available(*, deprecated, message: "Do not use.")
+    init() {
+        fatalError("Swift 4.1")
+    }
 }
