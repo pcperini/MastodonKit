@@ -13,22 +13,4 @@ extension String {
         let components = self.components(separatedBy: .whitespaces)
         return components.filter { !$0.isEmpty }.joined(separator: separator)
     }
-    
-    func attributedHTMLString() -> NSAttributedString {
-        guard let data = data(using: .utf16) else { return NSAttributedString() }
-        do {
-            return try NSAttributedString(data: data,
-                                          options: [
-                                            .documentType: NSAttributedString.DocumentType.html,
-                                            .defaultAttributes: String.Encoding.utf16.rawValue
-                                          ],
-                                          documentAttributes: nil)
-        } catch {
-            return NSAttributedString()
-        }
-    }
-    
-    func plainHTMLString() -> String {
-        return self.attributedHTMLString().string.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
 }

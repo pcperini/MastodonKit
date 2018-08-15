@@ -18,13 +18,7 @@ public class Account: Codable {
     /// The account's display name.
     public let displayName: String
     /// Biography of user.
-    public let note: String {
-        didSet {
-            self.richNote = self.note.attributedHTMLString()
-        }
-    }
-    
-    
+    public let note: String
     /// URL of the user's profile page (can be remote).
     public let url: String
     /// URL to the avatar image.
@@ -46,16 +40,7 @@ public class Account: Codable {
     /// The number of statuses the account has made.
     public let statusesCount: Int
     /// Array of profile metadata field, each element has 'name' and 'value'
-    public let fields: [[String: String]] {
-        didSet {
-            self.richFields = self.fields.map { (field) in
-                return [field["name"]!: field["value"].attributedHTMLString()]
-            }
-        }
-    }
-    
-    public var richFields: [[String: NSAttributedString]] = []
-    public var richNote: NSAttributedString = NSAttributedString()
+    public let fields: [[String: String]]
 
     private enum CodingKeys: String, CodingKey {
         case id
