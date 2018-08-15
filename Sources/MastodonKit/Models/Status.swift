@@ -22,7 +22,12 @@ public class Status: Codable {
     /// null or the ID of the account it replies to.
     public let inReplyToAccountID: String?
     /// Body of the status; this will contain HTML (remote HTML already sanitized).
-    public let content: String
+    public let content: String {
+        didSet {
+            self.richContent = self.content.attributedHTMLString()
+        }
+    }
+    
     /// The time the status was created.
     public let createdAt: Date
     /// An array of Emoji.
@@ -55,6 +60,8 @@ public class Status: Codable {
     public let reblog: Status?
     /// Whether this is the pinned status for the account that posted it.
     public let pinned: Bool?
+    
+    public var richContent: NSAttributedString = NSAttributedString()
 
     private enum CodingKeys: String, CodingKey {
         case id
