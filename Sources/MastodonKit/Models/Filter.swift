@@ -12,7 +12,7 @@ public class Filter: Codable {
     /// String that contains keyword or phrase.
     public let phrase: String
     /// Array of strings that means filtering context. Each string is one of 'home', 'notifications', 'public', 'thread'. At least one context must be specified.
-    public let context: [Context]
+    public let contexts: String
     /// Boolean that indicates irreversible filtering on server side.
     public let irreversible: Bool?
     /// Boolean that indicates word match.
