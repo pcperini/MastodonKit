@@ -103,7 +103,7 @@ public struct Accounts {
     /// - Parameter id: The account id.
     /// - Returns: Request for `Account`.
     public static func follow(id: String) -> Request<Relationship> {
-        return Request<Account>(path: "/api/v1/accounts/\(id)/follow", method: .post(.empty))
+        return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(.empty))
     }
 
     /// Unfollow an account.
@@ -111,7 +111,7 @@ public struct Accounts {
     /// - Parameter id: The account id.
     /// - Returns: Request for `Account`.
     public static func unfollow(id: String) -> Request<Relationship> {
-        return Request<Account>(path: "/api/v1/accounts/\(id)/unfollow", method: .post(.empty))
+        return Request<Relationship>(path: "/api/v1/accounts/\(id)/unfollow", method: .post(.empty))
     }
 
     /// Follows a remote user:.
