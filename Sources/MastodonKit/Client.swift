@@ -19,7 +19,7 @@ public struct Client: ClientType {
         self.accessToken = accessToken
     }
 
-    public func run<Model>(_ request: Request<Model>, completion: @escaping (Result<Model>) -> Void) {
+    public func run<Model>(_ request: Request<Model>, cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalCacheData, completion: @escaping (Result<Model>) -> Void) {
         guard
             let components = URLComponents(baseURL: baseURL, request: request),
             let url = components.url
@@ -27,8 +27,10 @@ public struct Client: ClientType {
                 completion(.failure(ClientError.malformedURL))
                 return
         }
-
-        let urlRequest = URLRequest(url: url, request: request, accessToken: accessToken)
+        
+        var urlRequest = URLRequest(url: url, request: request, accessToken: accessToken)
+        urlRequest.cachePolicy = request.cachePolicy
+        
         let task = session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 completion(.failure(error))
