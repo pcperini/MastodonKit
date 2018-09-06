@@ -162,9 +162,9 @@ public struct Accounts {
     /// - Parameter id: The account id.
     /// - Returns: Request for `Relationship`.
     public static func hideReblogs(id: String) -> Request<Relationship> {
-        return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(
-            Parameter(name: "reblogs", value: "false")
-        ))
+        return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(.parameters(
+            [Parameter(name: "reblogs", value: "false")]
+        )))
     }
     
     /// Shows reblogs.
@@ -172,9 +172,9 @@ public struct Accounts {
     /// - Parameter id: The account id.
     /// - Returns: Request for `Relationship`.
     public static func showReblogs(id: String) -> Request<Relationship> {
-        return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(
-            Parameter(name: "reblogs", value: "true")
-        ))
+        return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(.parameters(
+            [Parameter(name: "reblogs", value: "true")]
+        )))
     }
 
     /// Gets an account's relationships.
