@@ -19,7 +19,7 @@ public struct Client: ClientType {
         self.accessToken = accessToken
     }
 
-    public func run<Model>(_ request: Request<Model>, cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalCacheData, completion: @escaping (Result<Model>) -> Void) {
+    public func run<Model>(_ request: Request<Model>, completion: @escaping (Result<Model>) -> Void) {
         guard
             let components = URLComponents(baseURL: baseURL, request: request),
             let url = components.url

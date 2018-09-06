@@ -163,7 +163,7 @@ public struct Accounts {
     /// - Returns: Request for `Relationship`.
     public static func hideReblogs(id: String) -> Request<Relationship> {
         return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(
-            Parameter(name: "reblogs", value: 0)
+            Parameter(name: "reblogs", value: "false")
         ))
     }
     
@@ -173,7 +173,7 @@ public struct Accounts {
     /// - Returns: Request for `Relationship`.
     public static func showReblogs(id: String) -> Request<Relationship> {
         return Request<Relationship>(path: "/api/v1/accounts/\(id)/follow", method: .post(
-            Parameter(name: "reblogs", value: 1)
+            Parameter(name: "reblogs", value: "true")
         ))
     }
 
