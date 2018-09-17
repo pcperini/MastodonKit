@@ -42,7 +42,7 @@ public struct Accounts {
             Parameter(name: "note", value: note),
             Parameter(name: "avatar", value: avatar?.base64EncondedString),
             Parameter(name: "header", value: header?.base64EncondedString),
-            Parameter(name: "locked", value: locked.flatMap(trueOrNil))
+            Parameter(name: "locked", value: toBool(locked))
         ]
 
         let method = HTTPMethod.patch(.parameters(parameters))
