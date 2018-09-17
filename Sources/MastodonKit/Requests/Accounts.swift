@@ -41,8 +41,8 @@ public struct Accounts {
         var fieldParams: [Parameter] = []
         if let fields = fields {
             fields.enumerated().forEach {
-                fieldParams.append(Parameter(name: "fields_attributes[\($0.offset)][name]"), value: $0.element["name"])
-                fieldParams.append(Parameter(name: "fields_attributes[\($0.offset)][value]"), value: $0.element["value"])
+                fieldParams.append(Parameter(name: "fields_attributes[\($0.offset)][name]", value: $0.element["name"]))
+                fieldParams.append(Parameter(name: "fields_attributes[\($0.offset)][value]", value: $0.element["value"]))
             }
         }
         
