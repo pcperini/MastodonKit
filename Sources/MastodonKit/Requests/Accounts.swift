@@ -49,8 +49,8 @@ public struct Accounts {
         let parameters = [
             Parameter(name: "display_name", value: displayName),
             Parameter(name: "note", value: note),
-            Parameter(name: "avatar", value: avatar?.base64EncondedString),
-            Parameter(name: "header", value: header?.base64EncondedString),
+            Parameter(name: "avatar", value: avatar.flatMap({ Data(mediaAttachment: $0, fileName: "avatar") })?.base64EncodedString()),
+            Parameter(name: "header", value: header.flatMap({ Data(mediaAttachment: $0, fileName: "header") })?.base64EncodedString()),
             Parameter(name: "locked", value: toBool(locked))
         ] + fieldParams
 
