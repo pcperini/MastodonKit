@@ -19,9 +19,8 @@ public struct Filters {
     
     public static func save(id: Int?, phrase: String, contexts: [String]) -> Request<Filter> {
         let parameters = [
-            Parameter(name: "phrase", value: phrase),
-            Parameter(name: "context", value: contexts.joined(separator: " "))
-        ]
+            Parameter(name: "phrase", value: phrase)
+        ] + contexts.map({ Parameter(name: "context[]", value: $0) })
         
         let method: HTTPMethod
         let path: String
