@@ -17,9 +17,10 @@ public struct Filters {
         return Request<[Filter]>(path: "/api/v1/filters", method: method)
     }
     
-    public static func save(id: Int?, phrase: String) -> Request<Filter> {
+    public static func save(id: Int?, phrase: String, contexts: [String]) -> Request<Filter> {
         let parameters = [
-            Parameter(name: "phrase", value: phrase)
+            Parameter(name: "phrase", value: phrase),
+            Parameter(name: "context", value: contexts.joined(separator: " "))
         ]
         
         let method: HTTPMethod
